@@ -35,6 +35,12 @@
 // })
 
 
+
+app.get("/webhook",(req,res)=>{
+  res.send("hello world")
+})  
+
+
 app.post('/webhook', (req, res) => {
 	try {
 		console.log(req.body);
