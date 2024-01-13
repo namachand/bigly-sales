@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <div>
+        <h1>Server is ready</h1>
+        
+    </div>
+
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : 1420156088901785,
+            xfbml            : true,
+            version          : 'v18.0'
+          });
+        };
+
+//   function checkLoginState() {               // Called when a person is finished with the Login Button.
+//     FB.getLoginStatus(function(response) {   // See the onlogin handler
+//       statusChangeCallback(response);
+//     });
+//   }
+
+//   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+//     console.log('statusChangeCallback');
+//     console.log(response);                   // The current login status of the person.
+//     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+//       testAPI();  
+//     } else {                                 // Not logged into your webpage or we are unable to tell.
+//       document.getElementById('status').innerHTML = 'Please log ' +
+//         'into this webpage.';
+//     }
+//   }
+
+
+// function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+//     console.log('Welcome!  Fetching your information.... ');
+//     FB.api('/me', function(response) {
+//       console.log('Successful login for: ' + response.name);
+//       document.getElementById('status').innerHTML =
+//         'Thanks for logging in, ' + response.name + '!';
+//     });
+//   }
+
+function myFacebookLogin(){
+    FB.login(function(response){
+        console.log({"successfully loged in":response})
+        // FB.api('me', function(response){
+        //     console.log("successfully retrieved pages", response)
+        // })
+    },{scope:"email"})
+}
+
+
+    </script>
+
+    <button onclick="myFacebookLogin()">Click me</button>
+
+<!-- <fb:login-button scope="public_profile,email" ></fb:login-button> -->
+
+ <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>  -->
+
+</body>
+</html>
+
